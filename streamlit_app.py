@@ -14,7 +14,7 @@ streamlit.text(my_data_row)
 # run a snowflake query and put it all in a var called my_catalog
 my_cur.execute("select color_or_style from catalog_for_website")
 my_catalog = my_cur.fetchall()
-streamlit.text(my_catalog)
+# streamlit.text(my_catalog)
 
 # put the dafta into a dataframe
 df = pandas.DataFrame(my_catalog)
@@ -23,4 +23,9 @@ df = pandas.DataFrame(my_catalog)
 # put the first column into a list
 color_list = df[0].values.tolist()
 # print(color_list)
+
+# Let's put a pick list here so they can pick the color
+option = streamlit.selectbox('Pick a sweatsuit color or style:', list(color_list))
+# We'll build the image caption now, since we can
+product_caption = 'Our warm, comfortable, ' + option + ' sweatsuit!'
 

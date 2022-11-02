@@ -11,7 +11,7 @@ my_cur = my_cnx.cursor()
 # streamlit.text("Hello from Snowflake:")
 # streamlit.text(my_data_row)
 
-streamlit.title('Jian\'s Amazing Athleisure Catalog')
+streamlit.title('Amazing Athleisure Catalog')
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
